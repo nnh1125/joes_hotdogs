@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Worksheet</title>
+</head>
+<body>
+    <script>
+        function problem1() {
+            for(let i = 40; i >= 10; i -= 2) {
+                document.writeln(i);
+            }
+        }
+        function problem2() {
+            sum = 0;
+            while (sum <= 20) {
+                n = parseInt(prompt("Any numbers?"));
+                sum += n;
+            }
+        }
+        function problem3() {
+            sum = 0;
+            var arr = [];
+            while (sum <= 20) {
+                n = parseInt(prompt("Any numbers?"));
+                arr.push(n);
+                sum += n;
+            }
+            for(let i = 0; i < arr.length; i++) {
+                document.writeln(arr[i]);
+            }
+        }
+        function problem4() {
+            songs = [];
+            songs["Psycho"] = "RED VELVET";
+            songs["Cruel Summer"] = "Taylor Swift";
+            songs["Synchronicty"] = "Nogizaka46";
+            songs["Sugar"] = "Maroon 5";
+            songs["Last Chrismas"] = "Wham!";
+            for(song in songs) {
+                document.writeln(songs[song] + "-" + song);
+            }
+        }
+        function problem5() {
+            songs = [];
+            songs["Psycho"] = "RED VELVET";
+            songs["Cruel Summer"] = "Taylor Swift";
+            songs["Synchronicty"] = "Nogizaka46";
+            songs["Sugar"] = "Maroon 5";
+            songs["Last Chrismas"] = "Wham!";
+            band = prompt("Enter the name of the artist:", "Wham!");
+            song = Object.keys(songs).find(key => songs[key] === band);
+            document.writeln(song);
+        }
+        function caller(n) {
+            if (n == 1) {
+                problem1();
+            }
+            if (n == 2) {
+                problem2();
+            }
+            if (n == 3) {
+                problem3();
+            }
+            if (n == 4) {
+                problem4();
+            }
+            if (n == 5) {
+                problem5();
+            }
+        }
+        let n = parseInt(prompt("What is the problem number?", 1));
+        caller(n);
+    </script>
+</body>
+</html>
